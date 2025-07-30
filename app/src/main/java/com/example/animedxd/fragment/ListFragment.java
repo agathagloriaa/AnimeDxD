@@ -15,10 +15,8 @@ public class ListFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        // 1. Inflate layout untuk fragment terlebih dahulu
         View view = inflater.inflate(R.layout.fragment_list, container, false);
 
-        // GridView Data
         int[] imageId = {
             R.drawable.img1_darling_in_the_franxx,
             R.drawable.img2_5_toubun_no_hanayome,
@@ -59,14 +57,11 @@ public class ListFragment extends Fragment {
             "At Grace Field, orphans uncover the dark truth behind adoptions—and their beloved Mama’s secret.",
         };
 
-        // 2. Cari GridView dari objek 'view' yang sudah di-inflate
         GridView animeGridView = view.findViewById(R.id.animelist_grid_view);
 
-        // 3. Buat adapter dan berikan semua parameter yang dibutuhkan
         AnimeGridViewAdapter adapter = new AnimeGridViewAdapter(getContext(), imageId, titles, genres, synopsiss);
         animeGridView.setAdapter(adapter);
 
-        // Kembalikan objek 'view' yang sudah di-inflate dan diisi data
         return view;
     }
 }
