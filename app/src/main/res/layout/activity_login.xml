@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_gradient"
+    android:padding="24dp">
+
+    <!-- Greeting Text -->
+    <TextView
+        android:id="@+id/tvHello"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello!"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="50dp"/>
+
+    <TextView
+        android:id="@+id/tvSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome to AnimeDxD"
+        android:textSize="16sp"
+        android:textColor="#E0E0E0"
+        android:layout_below="@id/tvHello"
+        android:layout_marginTop="8dp"/>
+
+    <!-- Logo -->
+    <ImageView
+        android:id="@+id/ivLogo"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/logo_cat"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:contentDescription="Logo" />
+
+
+    <!-- Username Input -->
+    <EditText
+        android:id="@+id/etUsername"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Username"
+        android:background="@drawable/bg_input"
+        android:paddingStart="16dp"
+        android:textColorHint="#AAAAAA"
+        android:layout_below="@id/tvSubtitle"
+        android:layout_marginTop="140dp"
+        android:textColor="@android:color/white"/>
+
+    <!-- Password Input -->
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:background="@drawable/bg_input"
+        android:paddingStart="16dp"
+        android:textColorHint="#AAAAAA"
+        android:layout_below="@id/etUsername"
+        android:layout_marginTop="20dp"
+        android:textColor="@android:color/white"/>
+
+    <!-- Login Button -->
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="LOGIN"
+        android:textAllCaps="true"
+        android:textColor="@android:color/white"
+        android:background="@drawable/bg_button"
+        android:layout_below="@id/etPassword"
+        android:layout_marginTop="30dp"/>
+
+</RelativeLayout>
