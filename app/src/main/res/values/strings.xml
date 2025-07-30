@@ -1,3 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">AnimeDxD</string>
+    <string name="app_name">YourAppName</string>
+    <string name="home_title">Home</string>
+    <string name="list_title">List</string>
+    <string name="about_us_title">About Us</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="add_page_title">Add Page</string>
 </resources>

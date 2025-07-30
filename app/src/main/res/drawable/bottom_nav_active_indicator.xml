@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="@color/selector_solid_color" /> <!-- Menggunakan warna merah untuk box selector -->
+    <corners android:radius="1dp" />
+</shape>
