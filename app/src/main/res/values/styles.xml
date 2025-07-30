@@ -1,0 +1,10 @@
+<resources>
+    <style name="BottomNavActiveIndicatorStyle" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:drawable">@drawable/bottom_nav_active_indicator</item> <!-- Menambahkan drawable untuk background -->
+        <item name="android:width">140dp</item>
+        <item name="android:height">56dp</item>
+        <item name="android:insetLeft">4dp</item>
+        <item name="android:insetRight">4dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+</resources>
