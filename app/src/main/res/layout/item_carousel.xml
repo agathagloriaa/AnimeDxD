@@ -1,0 +1,48 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToOutline="true"
+    android:background="@drawable/rounded_box">
+
+    <!-- Gambar -->
+    <ImageView
+        android:id="@+id/carouselImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:adjustViewBounds="true" />
+
+    <!-- Overlay hitam untuk text -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="vertical"
+        android:background="#80000000"
+        android:padding="8dp">
+
+        <!-- News Text -->
+        <TextView
+            android:id="@+id/carouselNews"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NEWS!"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:shadowColor="#C2ACFF"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="8" />
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/carouselTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:text="Sample Title" />
+    </LinearLayout>
+
+</FrameLayout>
