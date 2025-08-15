@@ -25,7 +25,8 @@
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:shadowRadius="30"/>
 
     <GridView
         android:id="@+id/animelist_grid_view"
