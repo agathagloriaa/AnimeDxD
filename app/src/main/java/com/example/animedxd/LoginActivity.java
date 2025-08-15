@@ -30,6 +30,7 @@ public class LoginActivity extends AppCompatActivity {
             } else {
                 // Jika login berhasil, pindah ke MainActivity
                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                intent.putExtra("username_key", username);
                 startActivity(intent);
                 finish(); // Supaya user tidak bisa balik ke login pakai tombol back
             }
