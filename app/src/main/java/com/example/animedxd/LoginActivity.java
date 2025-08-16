@@ -57,15 +57,13 @@ public class LoginActivity extends AppCompatActivity {
             tvErrorPassword.setVisibility(View.INVISIBLE);
         }
 
-        // Stop if any validation failed
         if (!isValid) return;
 
-        // --- Login sukses (dummy cek) ---
         if (isValid) {
-            // Pindah ke MainActivity
             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+            intent.putExtra("username_key", username);
             startActivity(intent);
-            finish(); // Tutup halaman login
+            finish();
         }
     }
 

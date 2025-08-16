@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
             username = intent.getStringExtra("username_key");
         }
 
+
         bottomNavigationView = findViewById(R.id.bottom_navigation);
 
         // Set listener untuk BottomNavigationView
@@ -46,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
                 } else if (itemId == R.id.nav_list) {
                     selectedFragment = new ListFragment();
                 } else if (itemId == R.id.nav_us) {
-                    selectedFragment = new AboutUsFragment();
+                    selectedFragment = AboutUsFragment.newInstance(username);
                 }
 
                 // Ganti fragment di FrameLayout
