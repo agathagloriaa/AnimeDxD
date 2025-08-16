@@ -23,9 +23,8 @@
         android:background="@drawable/rounded_button_back"
         android:padding="8dp"
         android:src="@drawable/ic_arrow_back"
-        android:tint="@android:color/white"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
     <!-- Card Section -->
     <LinearLayout
         android:id="@+id/detail_card"
@@ -92,11 +91,10 @@
             android:layout_height="wrap_content"
             android:text="REVIEW"
             android:textAllCaps="true"
-            android:layout_marginTop="20dp"
-            android:backgroundTint="#5A2DDE"
+            android:layout_marginTop="175dp"
             android:textColor="@android:color/white"
             android:fontFamily="sans-serif-medium"
-            android:background="@drawable/rounded_button"/>
+            android:background="@drawable/btn_review_selector"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
