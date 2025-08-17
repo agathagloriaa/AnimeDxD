@@ -2,37 +2,69 @@ package com.example.animedxd;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class LoginActivity extends AppCompatActivity {
     EditText etUsername, etPassword;
     Button btnLogin;
+    TextView tvErrorUsername, tvErrorPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);  // Layout login
+        setContentView(R.layout.activity_login);
 
         etUsername = findViewById(R.id.etUsername);
         etPassword = findViewById(R.id.etPassword);
+        tvErrorUsername = findViewById(R.id.tvErrorUsername);
+        tvErrorPassword = findViewById(R.id.tvErrorPassword);
         btnLogin = findViewById(R.id.btnLogin);
 
-        btnLogin.setOnClickListener(v -> {
-            String username = etUsername.getText().toString().trim();
-            String password = etPassword.getText().toString().trim();
-
-            if (username.isEmpty() || password.isEmpty()) {
-                Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show();
-            } else {
-                // Jika login berhasil, pindah ke MainActivity
-                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                startActivity(intent);
-                finish(); // Supaya user tidak bisa balik ke login pakai tombol back
-            }
-        });
+        btnLogin.setOnClickListener(v -> handleLogin());
     }
+
+    private void handleLogin() {
+        String username = etUsername.getText().toString().trim();
+        String password = etPassword.getText().toString().trim();
+
+        boolean isValid = true;
+
+        // --- Username Validation ---
+        if (TextUtils.isEmpty(username)) {
+            tvErrorUsername.setText("Username is required");
+            tvErrorUsername.setVisibility(View.VISIBLE);
+            isValid = false;
+        } else if (username.length() < 5 || username.length() > 10) {
+            tvErrorUsername.setText("Username must be 5-10 characters");
+            tvErrorUsername.setVisibility(View.VISIBLE);
+            isValid = false;
+        } else {
+            tvErrorUsername.setVisibility(View.INVISIBLE);
+        }
+
+        // --- Password Validation ---
+        if (TextUtils.isEmpty(password)) {
+            tvErrorPassword.setText("Password is required");
+            tvErrorPassword.setVisibility(View.VISIBLE);
+            isValid = false;
+        } else {
+            tvErrorPassword.setVisibility(View.INVISIBLE);
+        }
+
+        if (!isValid) return;
+
+        if (isValid) {
+            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+            intent.putExtra("username_key", username);
+            startActivity(intent);
+            finish();
+        }
+    }
+
 }

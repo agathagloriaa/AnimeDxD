@@ -1,28 +1,35 @@
-package com.example.animedxd; // Pastikan package ini sesuai dengan package MainActivity kamu
-
+package com.example.animedxd;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-// Import fragment-fragment yang sudah kamu buat
 import com.example.animedxd.fragment.HomepageFragment;
 import com.example.animedxd.fragment.ListFragment;
 import com.example.animedxd.fragment.AboutUsFragment;
 
 public class MainActivity extends AppCompatActivity {
 
-    private BottomNavigationView bottomNavigationView; // Deklarasikan di sini
+    private BottomNavigationView bottomNavigationView;
+    private String username;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Menerima username dari Intent yang dikirim LoginActivity
+        Intent intent = getIntent();
+        if (intent != null) {
+            username = intent.getStringExtra("username_key");
+        }
+
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
 
@@ -36,11 +43,11 @@ public class MainActivity extends AppCompatActivity {
                 // Cek ID item yang dipilih
                 int itemId = item.getItemId();
                 if (itemId == R.id.nav_homepage) {
-                    selectedFragment = new HomepageFragment();
+                    selectedFragment = HomepageFragment.newInstance(username);
                 } else if (itemId == R.id.nav_list) {
                     selectedFragment = new ListFragment();
                 } else if (itemId == R.id.nav_us) {
-                    selectedFragment = new AboutUsFragment();
+                    selectedFragment = AboutUsFragment.newInstance(username);
                 }
 
                 // Ganti fragment di FrameLayout
@@ -61,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
     private void replaceFragment(Fragment fragment) {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.fragment_container, fragment); // Ganti di fragment_container
-        fragmentTransaction.commit(); // Terapkan perubahan
+        fragmentTransaction.replace(R.id.fragment_container, fragment);
+        fragmentTransaction.commit();
     }
 }

@@ -13,19 +13,19 @@
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="AnimeDXD List"
-        android:textColor="@color/white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="8dp"
         android:paddingHorizontal="20dp"
         android:paddingVertical="10dp"
         android:shadowColor="#C2ACFF"
         android:shadowDx="0"
         android:shadowDy="0"
-        android:shadowRadius="30"/>
+        android:shadowRadius="8"
+        android:text="AnimeDXD List"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <GridView
         android:id="@+id/animelist_grid_view"
