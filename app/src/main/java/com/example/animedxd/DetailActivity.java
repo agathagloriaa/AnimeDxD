@@ -62,7 +62,7 @@ public class DetailActivity extends AppCompatActivity {
 
                 // --- Review Validation ---
                 if (TextUtils.isEmpty(review)) {
-                    tvErrorReview.setText("Review is required");
+                    tvErrorReview.setText("Review must be filled in");
                     tvErrorReview.setVisibility(View.VISIBLE);
                     isValid = false;
                 } else {

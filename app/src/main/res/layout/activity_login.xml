@@ -9,16 +9,17 @@
         <!-- Judul -->
         <TextView
             android:id="@+id/tvHello"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="180dp"
+            android:layout_height="78dp"
             android:text="Hello!"
-            android:textSize="48sp"
-            android:textStyle="bold"
+            android:textSize="60sp"
+            android:fontFamily="@font/poppins_semibold"
             android:textColor="@android:color/white"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="200dp"
-            android:layout_marginStart="24dp" />
+            android:layout_marginTop="185dp"
+            android:layout_marginStart="24dp"
+            android:paddingBottom="0dp"/>
 
         <!-- Subtitle -->
         <TextView
@@ -26,7 +27,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Welcome to AnimeDxD"
-            android:textSize="16sp"
+            android:fontFamily="@font/poppins_light"
+            android:textSize="19sp"
             android:textColor="#E0E0E0"
             app:layout_constraintTop_toBottomOf="@id/tvHello"
             app:layout_constraintStart_toStartOf="@id/tvHello"
@@ -47,28 +49,31 @@
             android:padding="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvSubtitle">
+            app:layout_constraintTop_toBottomOf="@id/tvSubtitle"
+            android:gravity="center_horizontal">
 
             <!-- Username -->
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="30dp"
                 android:layout_marginTop="20dp"
                 android:paddingStart="4dp"
                 android:text="Username"
                 android:textColor="#F2F2F2"
-                android:textSize="22sp" />
+                android:textSize="19sp"
+                android:fontFamily="@font/poppins_light"/>
 
             <EditText
                 android:id="@+id/etUsername"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="4dp"
-                android:layout_marginBottom="16dp"
+                android:layout_marginBottom="5dp"
                 android:background="@drawable/bg_input"
                 android:hint="Username"
                 android:paddingStart="16dp"
                 android:textColor="@android:color/black"
+                android:fontFamily="@font/poppins_regular"
                 android:textColorHint="#AAAAAA" />
 
             <TextView
@@ -78,6 +83,7 @@
                 android:includeFontPadding="false"
                 android:minHeight="20dp"
                 android:paddingStart="4dp"
+                android:layout_marginBottom="8dp"
                 android:text=""
                 android:textColor="#FF4444"
                 android:textSize="17sp" />
@@ -90,19 +96,21 @@
                 android:paddingStart="4dp"
                 android:text="Password"
                 android:textColor="#F2F2F2"
-                android:textSize="22sp" />
+                android:textSize="19sp"
+                android:fontFamily="@font/poppins_light"/>
 
             <EditText
                 android:id="@+id/etPassword"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_marginBottom="16dp"
+                android:layout_marginBottom="5dp"
                 android:background="@drawable/bg_input"
                 android:hint="Password"
                 android:inputType="textPassword"
                 android:paddingStart="16dp"
                 android:textColor="@android:color/black"
-                android:textColorHint="#AAAAAA" />
+                android:textColorHint="#AAAAAA"
+                android:fontFamily="@font/poppins_regular"/>
 
             <TextView
                 android:id="@+id/tvErrorPassword"
@@ -113,18 +121,19 @@
                 android:paddingStart="4dp"
                 android:text=""
                 android:textColor="#FF4444"
+                android:layout_marginBottom="16dp"
                 android:textSize="17sp" />
 
             <!-- Tombol Login -->
             <Button
                 android:id="@+id/btnLogin"
-                android:layout_width="match_parent"
+                android:layout_width="250dp"
                 android:layout_height="60dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="20dp"
                 android:background="@drawable/bg_button_login"
-                android:text="LOGIN"
-                android:textAllCaps="true"
+                android:text="Login"
+                android:textAllCaps="false"
                 android:textColor="@android:color/white" />
 
 
@@ -132,8 +141,8 @@
 
         <ImageView
             android:id="@+id/ivLogo"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="135dp"
+            android:layout_height="135dp"
             android:src="@drawable/logo_cat"
             android:contentDescription="Logo"
             app:layout_constraintTop_toTopOf="@id/containerForm"
