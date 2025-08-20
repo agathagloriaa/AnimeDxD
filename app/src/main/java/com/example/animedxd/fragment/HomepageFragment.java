@@ -1,7 +1,6 @@
 package com.example.animedxd.fragment;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -19,7 +18,6 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.widget.ViewPager2;
 
-import com.example.animedxd.LoginActivity;
 import com.example.animedxd.R;
 import com.example.animedxd.CarouselAdapter;
 import com.example.animedxd.CarouselItem;
@@ -29,7 +27,6 @@ import java.util.List;
 
 public class HomepageFragment extends Fragment {
 
-    private boolean isLogoutMenuVisible = false;
     private String username;
 
     private TextView newsTab;
@@ -44,6 +41,10 @@ public class HomepageFragment extends Fragment {
 
     private LinearLayout dotsLayout;
     private ImageView[] dots;
+
+    // ✅ Tambahan: deklarasi welcome label dan username
+    private TextView welcomeLabel;
+    private TextView usernameText;
 
     public static HomepageFragment newInstance(String username) {
         HomepageFragment fragment = new HomepageFragment();
@@ -71,39 +72,29 @@ public class HomepageFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        ImageView arrowIcon = view.findViewById(R.id.arrow_icon);
-        TextView logoutButton = view.findViewById(R.id.logout_button);
-        TextView welcomeLabel = view.findViewById(R.id.welcome_label);
-        TextView usernameText = view.findViewById(R.id.username_text);
-
         newsTab = view.findViewById(R.id.news_tab);
         mangaTab = view.findViewById(R.id.manga_tab);
         newsCarouselContainer = view.findViewById(R.id.news_carousel_container);
-        mangaGridView = view.findViewById(R.id.manga_grid_view); // Inisialisasi GridView
+        mangaGridView = view.findViewById(R.id.manga_grid_view);
+
+        // ✅ Inisialisasi welcome label dan username
+        welcomeLabel = view.findViewById(R.id.welcome_label);
+        usernameText = view.findViewById(R.id.username_text);
 
         if (username != null) {
-            // Set label tetap
             welcomeLabel.setText("Welcome,");
-            // Set nama sesuai hasil login
             usernameText.setText(username);
         }
 
-
+        // Inisialisasi carousel untuk tab News
         List<CarouselItem> carouselItems = new ArrayList<>();
         carouselItems.add(new CarouselItem(R.drawable.demonslayer, "Demon Slayer: Kimetsu no Yaiba Infinity Castle Trilogy Confirmed!\n"));
         carouselItems.add(new CarouselItem(R.drawable.sololeveling, "A New Disappointing Update About ‘Solo Leveling’ Season 3\n"));
         carouselItems.add(new CarouselItem(R.drawable.jujutsu, "Jujutsu Kaisen Reveals New Satoru Gojo Visual to Mark Hidden Inventory / Premature Death\n"));
 
-
-
         newsViewPager = view.findViewById(R.id.news_view_pager);
         CarouselAdapter carouselAdapter = new CarouselAdapter(carouselItems);
         newsViewPager.setAdapter(carouselAdapter);
-
-
-        dotsLayout = view.findViewById(R.id.news_dots_indicator);
-        addDotsIndicator(carouselItems.size());
-        updateDotsIndicator(0);
 
         newsViewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override
@@ -122,7 +113,6 @@ public class HomepageFragment extends Fragment {
             }
         });
 
-
         handler = new Handler(Looper.getMainLooper());
         runnable = () -> {
             int currentItem = newsViewPager.getCurrentItem();
@@ -131,7 +121,7 @@ public class HomepageFragment extends Fragment {
             handler.postDelayed(runnable, DELAY_MS);
         };
 
-
+        // Inisialisasi GridView untuk tab Manga
         int[] mangaImageIds = {
                 R.drawable.starofbeethoven,
                 R.drawable.heroorganization,
@@ -165,35 +155,15 @@ public class HomepageFragment extends Fragment {
 
         };
 
+
+
         MangaGridViewAdapter mangaAdapter = new MangaGridViewAdapter(getContext(), mangaImageIds, mangaTitles, mangaAuthors, mangaDescriptions);
         mangaGridView.setAdapter(mangaAdapter);
 
-
-
-
+        // Atur tab News sebagai default
         selectTab(newsTab, newsCarouselContainer);
         unselectTab(mangaTab, mangaGridView);
         handler.postDelayed(runnable, DELAY_MS);
-
-
-        arrowIcon.setOnClickListener(v -> {
-            if (isLogoutMenuVisible) {
-                logoutButton.setVisibility(View.GONE);
-                arrowIcon.animate().rotation(0f).start();
-            } else {
-                logoutButton.setVisibility(View.VISIBLE);
-                arrowIcon.animate().rotation(180f).start();
-            }
-            isLogoutMenuVisible = !isLogoutMenuVisible;
-        });
-
-
-        logoutButton.setOnClickListener(v -> {
-            Intent intent = new Intent(requireContext(), LoginActivity.class);
-            startActivity(intent);
-            requireActivity().finish();
-        });
-
 
         newsTab.setOnClickListener(v -> {
             selectTab(newsTab, newsCarouselContainer);
@@ -266,7 +236,6 @@ public class HomepageFragment extends Fragment {
         }
     }
 
-
     private class MangaGridViewAdapter extends BaseAdapter {
 
         private final Context context;
@@ -290,7 +259,7 @@ public class HomepageFragment extends Fragment {
 
         @Override
         public Object getItem(int position) {
-            return null; // Tidak digunakan
+            return null;
         }
 
         @Override
@@ -322,3 +291,5 @@ public class HomepageFragment extends Fragment {
         }
     }
 }
+
+

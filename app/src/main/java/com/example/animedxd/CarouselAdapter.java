@@ -27,14 +27,15 @@ public class CarouselAdapter extends RecyclerView.Adapter<CarouselAdapter.Carous
 
     @Override
     public void onBindViewHolder(@NonNull CarouselViewHolder holder, int position) {
-        CarouselItem item = carouselItems.get(position);
+        CarouselItem item = carouselItems.get(position % carouselItems.size());
         holder.carouselImage.setImageResource(item.getImageResId());
         holder.carouselTitle.setText(item.getTitle());
     }
 
+
     @Override
     public int getItemCount() {
-        return carouselItems.size();
+        return Integer.MAX_VALUE;
     }
 
     static class CarouselViewHolder extends RecyclerView.ViewHolder {

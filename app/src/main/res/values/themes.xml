@@ -14,5 +14,12 @@
         <item name="android:color">@color/purple_500</item>
         <item name="android:width">40dp</item>
         <item name="android:height">40dp</item>
+        <item name="android:insetLeft">4dp</item>
+        <item name="android:insetRight">4dp</item>
+        <item name="android:gravity">center</item>
     </style>
 </resources>
+
+
+
+
