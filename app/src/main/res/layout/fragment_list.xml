@@ -19,7 +19,6 @@
         android:shadowColor="#C2ACFF"
         android:shadowDx="0"
         android:shadowDy="0"
-        android:shadowRadius="8"
         android:text="AnimeDXD List"
         android:textColor="@color/white"
         android:textSize="24sp"

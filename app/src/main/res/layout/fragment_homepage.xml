@@ -10,7 +10,7 @@
     android:scrollbars="none"
     android:background="@drawable/gradient_background">
 
-    <!-- Kontainer untuk header, menggunakan ConstraintLayout untuk menempatkan elemen -->
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/header_container"
         android:layout_width="match_parent"
@@ -40,7 +40,7 @@
             android:shadowDy="0"
             android:shadowRadius="8"/>
 
-        <!-- Kontainer untuk ikon di kanan -->
+
         <LinearLayout
             android:id="@+id/icon_container"
             android:layout_width="wrap_content"
@@ -59,7 +59,7 @@
                 android:src="@drawable/ic_profile_icon"
                 android:layout_marginEnd="5dp"/>
 
-            <!-- ImageView untuk panah bawah/atas -->
+
             <ImageView
                 android:id="@+id/arrow_icon"
                 android:layout_width="24dp"
@@ -71,7 +71,7 @@
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!-- TextView untuk tombol Logout, disembunyikan secara default -->
+
     <TextView
         android:id="@+id/logout_button"
         android:layout_width="wrap_content"
@@ -91,7 +91,7 @@
         android:clickable="true"
         android:focusable="true"/>
 
-    <!-- Kontainer Banner (gambar dan teks) -->
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/banner_container"
         android:layout_width="match_parent"
@@ -104,7 +104,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginHorizontal="20dp">
 
-        <!-- Gambar yang menimpa banner (di atas background) -->
+
         <ImageView
             android:id="@+id/overlay_image"
             android:layout_width="170dp"
@@ -115,12 +115,9 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
 
-        <!-- Teks sambutan di atas gambar latar -->
-        <!-- Teks sambutan -->
 
-        <!-- Username -->
 
-        <!-- Kontainer untuk dua TextView (Welcome dan Username) -->
+
         <LinearLayout
             android:id="@+id/welcome_container"
             android:layout_width="0dp"
@@ -158,7 +155,7 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!-- Kontainer Tab -->
+
     <LinearLayout
         android:id="@+id/tabs_container"
         android:layout_width="match_parent"
@@ -170,7 +167,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <!-- Tombol tab "News" -->
+
         <TextView
             android:id="@+id/news_tab"
             android:layout_width="87dp"
@@ -189,7 +186,7 @@
             android:shadowRadius="3"
             android:gravity="center"/>
 
-        <!-- Tombol tab "Manga" -->
+
         <TextView
             android:id="@+id/manga_tab"
             android:layout_width="87dp"
@@ -209,7 +206,7 @@
             android:gravity="center"/>
     </LinearLayout>
 
-    <!-- Kontainer untuk carousel tab News -->
+
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/news_carousel_container"
@@ -226,9 +223,7 @@
         app:layout_constraintTop_toBottomOf="@id/tabs_container"
         app:layout_constraintVertical_bias="0.222">
 
-        <!-- Kotak fix untuk carousel -->
 
-        <!-- Indikator dot untuk ViewPager2 -->
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/news_view_pager"
             android:layout_width="match_parent"
@@ -250,7 +245,7 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!-- GridView untuk konten tab Manga -->
+
     <GridView
         android:id="@+id/manga_grid_view"
         android:layout_width="match_parent"

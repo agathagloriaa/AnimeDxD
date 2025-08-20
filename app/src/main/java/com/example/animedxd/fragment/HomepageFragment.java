@@ -9,7 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.GridView; // Import GridView
+import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -35,12 +35,12 @@ public class HomepageFragment extends Fragment {
     private TextView newsTab;
     private TextView mangaTab;
     private View newsCarouselContainer;
-    private GridView mangaGridView; // Deklarasi GridView
+    private GridView mangaGridView;
 
     private ViewPager2 newsViewPager;
     private Handler handler;
     private Runnable runnable;
-    private static final int DELAY_MS = 5000; // Delay 5 detik
+    private static final int DELAY_MS = 5000;
 
     private LinearLayout dotsLayout;
     private ImageView[] dots;
@@ -88,19 +88,19 @@ public class HomepageFragment extends Fragment {
             usernameText.setText(username);
         }
 
-        // List gambar untuk carousel
+
         List<CarouselItem> carouselItems = new ArrayList<>();
         carouselItems.add(new CarouselItem(R.drawable.demonslayer, "Demon Slayer: Kimetsu no Yaiba Infinity Castle Trilogy Confirmed!\n"));
         carouselItems.add(new CarouselItem(R.drawable.sololeveling, "A New Disappointing Update About ‘Solo Leveling’ Season 3\n"));
         carouselItems.add(new CarouselItem(R.drawable.jujutsu, "Jujutsu Kaisen Reveals New Satoru Gojo Visual to Mark Hidden Inventory / Premature Death\n"));
 
 
-        // ViewPager2 setup
+
         newsViewPager = view.findViewById(R.id.news_view_pager);
         CarouselAdapter carouselAdapter = new CarouselAdapter(carouselItems);
         newsViewPager.setAdapter(carouselAdapter);
 
-        // Dots indicator setup
+
         dotsLayout = view.findViewById(R.id.news_dots_indicator);
         addDotsIndicator(carouselItems.size());
         updateDotsIndicator(0);
@@ -122,7 +122,7 @@ public class HomepageFragment extends Fragment {
             }
         });
 
-        // Auto-slide runnable
+
         handler = new Handler(Looper.getMainLooper());
         runnable = () -> {
             int currentItem = newsViewPager.getCurrentItem();
@@ -131,7 +131,7 @@ public class HomepageFragment extends Fragment {
             handler.postDelayed(runnable, DELAY_MS);
         };
 
-        // --- Ini adalah tempat Anda meletakkan data dan adapter untuk GridView Manga ---
+
         int[] mangaImageIds = {
                 R.drawable.starofbeethoven,
                 R.drawable.heroorganization,
@@ -167,15 +167,15 @@ public class HomepageFragment extends Fragment {
 
         MangaGridViewAdapter mangaAdapter = new MangaGridViewAdapter(getContext(), mangaImageIds, mangaTitles, mangaAuthors, mangaDescriptions);
         mangaGridView.setAdapter(mangaAdapter);
-        // --- Akhir dari kode tambahan ---
 
 
-        // Default tab
+
+
         selectTab(newsTab, newsCarouselContainer);
         unselectTab(mangaTab, mangaGridView);
         handler.postDelayed(runnable, DELAY_MS);
 
-        // Arrow icon untuk logout
+
         arrowIcon.setOnClickListener(v -> {
             if (isLogoutMenuVisible) {
                 logoutButton.setVisibility(View.GONE);
@@ -187,14 +187,14 @@ public class HomepageFragment extends Fragment {
             isLogoutMenuVisible = !isLogoutMenuVisible;
         });
 
-        // Logout button action
+
         logoutButton.setOnClickListener(v -> {
             Intent intent = new Intent(requireContext(), LoginActivity.class);
             startActivity(intent);
             requireActivity().finish();
         });
 
-        // Tab switching
+
         newsTab.setOnClickListener(v -> {
             selectTab(newsTab, newsCarouselContainer);
             unselectTab(mangaTab, mangaGridView);
@@ -266,10 +266,7 @@ public class HomepageFragment extends Fragment {
         }
     }
 
-    /**
-     * Kelas adapter internal untuk GridView.
-     * Mengelola data dan tampilan item-item GridView.
-     */
+
     private class MangaGridViewAdapter extends BaseAdapter {
 
         private final Context context;
