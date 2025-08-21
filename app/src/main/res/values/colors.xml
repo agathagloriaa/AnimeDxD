@@ -10,7 +10,7 @@
     <color name="navbar_background_color">#191033</color>
 
     <!-- Selector Colors -->
-    <color name="selector_solid_color">#34226a</color>  <!-- Merah -->
+    <color name="selector_solid_color">#34226a</color>
     <color name="selected_item_color">#FFFFFFFF</color>
     <color name="unselected_item_color">#FFB0B0B0</color>
     <color name="unselected_item_opacity_75">#BFB0B0B0</color>
@@ -18,7 +18,7 @@
     <color name="layer_bottom_color">#340BA8</color>
     <color name="layer_middle_start">#3C7AFF</color>
     <color name="layer_middle_end_opaque">#4F15F3</color>
-    <color name="layer_top_start_transparent">#004F15F3</color> <!-- 0% opacity -->
-    <color name="layer_top_middle_semi_transparent">#4D4F15F3</color> <!-- 30% opacity -->
+    <color name="layer_top_start_transparent">#004F15F3</color>
+    <color name="layer_top_middle_semi_transparent">#4D4F15F3</color>
     <color name="layer_top_end">#8647FF</color>
 </resources>

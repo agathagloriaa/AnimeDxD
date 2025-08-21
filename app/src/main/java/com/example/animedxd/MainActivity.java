@@ -23,10 +23,10 @@ public class MainActivity extends AppCompatActivity {
     private BottomNavigationView bottomNavigationView;
     private String username;
 
-    // Header
+
     private ImageView arrowIcon;
     private TextView logoutButton;
-    private View darkOverlay;   // overlay hitam
+    private View darkOverlay;
     private boolean isLogoutMenuVisible = false;
 
     @Override
@@ -34,28 +34,28 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Menerima username dari Intent
+
         Intent intent = getIntent();
         if (intent != null) {
             username = intent.getStringExtra("username_key");
         }
 
-        // --- Header ---
+
         arrowIcon = findViewById(R.id.arrow_icon);
         logoutButton = findViewById(R.id.logout_button);
-        darkOverlay = findViewById(R.id.overlay_view); // pastikan ada di XML
+        darkOverlay = findViewById(R.id.overlay_view);
 
-        // Default: sembunyi
+
         if (logoutButton != null) logoutButton.setVisibility(View.GONE);
         if (darkOverlay != null) darkOverlay.setVisibility(View.GONE);
 
         if (arrowIcon != null && logoutButton != null && darkOverlay != null) {
             arrowIcon.setOnClickListener(v -> toggleLogoutMenu());
 
-            // Klik overlay → nutup menu
+
             darkOverlay.setOnClickListener(v -> hideLogoutMenu());
 
-            // Klik logout → balik ke login
+
             logoutButton.setOnClickListener(v -> {
                 Intent i = new Intent(MainActivity.this, LoginActivity.class);
                 startActivity(i);
@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
             });
         }
 
-        // --- Bottom Nav ---
+
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(
                 new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
                 }
         );
 
-        // Default fragment
+
         if (savedInstanceState == null) {
             bottomNavigationView.setSelectedItemId(R.id.nav_homepage);
         }

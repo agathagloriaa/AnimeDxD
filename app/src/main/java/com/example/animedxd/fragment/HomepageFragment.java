@@ -42,7 +42,7 @@ public class HomepageFragment extends Fragment {
     private LinearLayout dotsLayout;
     private ImageView[] dots;
 
-    // ✅ Tambahan: deklarasi welcome label dan username
+
     private TextView welcomeLabel;
     private TextView usernameText;
 
@@ -121,7 +121,7 @@ public class HomepageFragment extends Fragment {
             handler.postDelayed(runnable, DELAY_MS);
         };
 
-        // Inisialisasi GridView untuk tab Manga
+
         int[] mangaImageIds = {
                 R.drawable.starofbeethoven,
                 R.drawable.heroorganization,
@@ -160,7 +160,7 @@ public class HomepageFragment extends Fragment {
         MangaGridViewAdapter mangaAdapter = new MangaGridViewAdapter(getContext(), mangaImageIds, mangaTitles, mangaAuthors, mangaDescriptions);
         mangaGridView.setAdapter(mangaAdapter);
 
-        // Atur tab News sebagai default
+
         selectTab(newsTab, newsCarouselContainer);
         unselectTab(mangaTab, mangaGridView);
         handler.postDelayed(runnable, DELAY_MS);
