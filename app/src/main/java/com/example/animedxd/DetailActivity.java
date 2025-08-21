@@ -30,13 +30,13 @@ public class DetailActivity extends AppCompatActivity {
         TextView genreView = findViewById(R.id.detail_genre);
         TextView synopsisView = findViewById(R.id.detail_synopsis);
 
-        // Ambil data dari Intent
+
         int imageRes = getIntent().getIntExtra("image", 0);
         String title = getIntent().getStringExtra("title");
         String genre = getIntent().getStringExtra("genre");
         String synopsis = getIntent().getStringExtra("synopsis");
 
-        // Set data
+
         imageView.setImageResource(imageRes);
         titleView.setText(title);
         genreView.setText(genre);
@@ -47,7 +47,7 @@ public class DetailActivity extends AppCompatActivity {
 
         Button btnReview = findViewById(R.id.btn_review);
         btnReview.setOnClickListener(v -> {
-            // Buat dialog
+
             Dialog dialog = new Dialog(DetailActivity.this);
             dialog.setContentView(R.layout.dialog_review);
             dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT)); // biar rounded
@@ -60,7 +60,7 @@ public class DetailActivity extends AppCompatActivity {
                 String review = inputReview.getText().toString().trim();
                 boolean isValid = true;
 
-                // --- Review Validation ---
+
                 if (TextUtils.isEmpty(review)) {
                     tvErrorReview.setText("Review must be filled in");
                     tvErrorReview.setVisibility(View.VISIBLE);

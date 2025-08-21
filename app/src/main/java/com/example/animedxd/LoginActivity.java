@@ -35,7 +35,7 @@ public class LoginActivity extends AppCompatActivity {
 
         boolean isValid = true;
 
-        // --- Username Validation ---
+
         if (TextUtils.isEmpty(username)) {
             tvErrorUsername.setText("Username must be filled in");
             tvErrorUsername.setVisibility(View.VISIBLE);
@@ -48,7 +48,7 @@ public class LoginActivity extends AppCompatActivity {
             tvErrorUsername.setVisibility(View.INVISIBLE);
         }
 
-        // --- Password Validation ---
+
         if (TextUtils.isEmpty(password)) {
             tvErrorPassword.setText("Password must be filled in");
             tvErrorPassword.setVisibility(View.VISIBLE);

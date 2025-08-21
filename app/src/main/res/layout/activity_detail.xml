@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:background="#121212">
 
-    <!-- Cover Image -->
+
     <ImageView
         android:id="@+id/detail_image"
         android:layout_width="0dp"
@@ -14,7 +14,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <!-- Back Button -->
+
     <ImageButton
         android:id="@+id/btn_back"
         android:layout_width="40dp"
@@ -25,7 +25,7 @@
         android:src="@drawable/ic_arrow_back"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    <!-- Card Section -->
+
     <LinearLayout
         android:id="@+id/detail_card"
         android:orientation="vertical"
@@ -41,7 +41,7 @@
         android:elevation="8dp"
         android:gravity="center_horizontal">
 
-        <!-- Title -->
+
         <TextView
             android:id="@+id/detail_title"
             android:layout_width="wrap_content"
@@ -52,7 +52,7 @@
             android:textColor="@android:color/white"
             android:fontFamily="@font/poppins_bold"/>
 
-        <!-- Genre -->
+
         <TextView
             android:id="@+id/detail_genre_label"
             android:layout_width="wrap_content"
@@ -72,7 +72,7 @@
             android:textColor="@android:color/white"
             android:fontFamily="@font/poppins_medium"/>
 
-        <!-- Synopsis -->
+
         <TextView
             android:id="@+id/detail_synopsis_label"
             android:layout_width="wrap_content"
@@ -93,7 +93,7 @@
             android:text="In a world at war with Klaxosaurs, Hiro meets mysterious Zero Two. Together, they pilot a FranXX, giving Hiro purpose—at a deadly cost."
             android:fontFamily="@font/poppins_regular"/>
 
-        <!-- Review Button -->
+
         <Button
             android:id="@+id/btn_review"
             android:layout_width="250dp"
