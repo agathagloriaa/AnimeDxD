@@ -36,7 +36,10 @@
         app:layout_constraintTop_toBottomOf="@id/detail_image"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="-40dp"
+        android:elevation="8dp"
+        android:gravity="center_horizontal">
 
         <!-- Title -->
         <TextView
@@ -44,9 +47,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Darling in the FranXX"
-            android:textSize="22sp"
+            android:textSize="29sp"
             android:textStyle="bold"
-            android:textColor="@android:color/white"/>
+            android:textColor="@android:color/white"
+            android:fontFamily="@font/poppins_bold"/>
 
         <!-- Genre -->
         <TextView
@@ -55,7 +59,9 @@
             android:layout_height="wrap_content"
             android:text="Genre:"
             android:textStyle="bold"
+            android:textSize="21sp"
             android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins_semibold"
             android:textColor="@android:color/white"/>
 
         <TextView
@@ -63,7 +69,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Mecha, Romantic Drama"
-            android:textColor="@android:color/white"/>
+            android:textColor="@android:color/white"
+            android:fontFamily="@font/poppins_medium"/>
 
         <!-- Synopsis -->
         <TextView
@@ -71,9 +78,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Synopsis:"
-            android:textStyle="bold"
+            android:textSize="21sp"
             android:layout_marginTop="10dp"
-            android:textColor="@android:color/white"/>
+            android:textColor="@android:color/white"
+            android:fontFamily="@font/poppins_semibold"/>
 
         <TextView
             android:id="@+id/detail_synopsis"
@@ -82,16 +90,17 @@
             android:layout_marginTop="5dp"
             android:lineSpacingExtra="2dp"
             android:textColor="@android:color/white"
-            android:text="In a world at war with Klaxosaurs, Hiro meets mysterious Zero Two. Together, they pilot a FranXX, giving Hiro purpose—at a deadly cost."/>
+            android:text="In a world at war with Klaxosaurs, Hiro meets mysterious Zero Two. Together, they pilot a FranXX, giving Hiro purpose—at a deadly cost."
+            android:fontFamily="@font/poppins_regular"/>
 
         <!-- Review Button -->
         <Button
             android:id="@+id/btn_review"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="REVIEW"
-            android:textAllCaps="true"
-            android:layout_marginTop="175dp"
+            android:layout_width="250dp"
+            android:layout_height="60dp"
+            android:text="Review"
+            android:textAllCaps="false"
+            android:layout_marginTop="130dp"
             android:textColor="@android:color/white"
             android:fontFamily="sans-serif-medium"
             android:background="@drawable/btn_review_selector"/>
